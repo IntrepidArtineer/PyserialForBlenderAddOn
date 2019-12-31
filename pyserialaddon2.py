@@ -168,9 +168,7 @@ class SCENE_OT_SerialOneScan(Operator):
             serial_device.port = 'COM5'
             serial_device.timeout = 1
             serial_device.open()
-            serial_device.readline()
-            print("moo")
-            
+            serial_device.readline()            
 
             raw_string = serial_device.readline()
             line = str(raw_string)
@@ -185,15 +183,12 @@ class SCENE_OT_SerialOneScan(Operator):
                 dumb = 0
                 for dumber in scene.prop_group.coll:
                     dumb = dumb + 1
-                print("bark")
-                print(data)
-                print(dumb)
 
                 if len(data) > dumb:
                     #there is less data items than prop_group items
                     #stop when you use all the data
                     countup = 0
-                    print('hawaii')
+
                     for thing in data:
                         #thing is like data[x], so...
                         #next we need to figure out what to do based on the specifications for the data?
@@ -208,7 +203,6 @@ class SCENE_OT_SerialOneScan(Operator):
                         elif scene.prop_group.coll[countup].type == 'String':
                             scene.prop_group.coll[countup].stringval = str(thing)
                         elif scene.prop_group.coll[countup].type == 'Bool':
-                            print("nyan")
                             scene.prop_group.coll[countup].ExampleBool = bool(thing)
                         else:
                             pass
@@ -227,7 +221,6 @@ class SCENE_OT_SerialOneScan(Operator):
                         elif scene.prop_group.coll[countup].type == 'String':
                             scene.prop_group.coll[countup].stringval = str(data[countup])
                         elif scene.prop_group.coll[countup].type == 'Bool':
-                            print("quack")
                             scene.prop_group.coll[countup].ExampleBool = bool(data[countup])
                         else:
                             pass
@@ -245,16 +238,15 @@ class SCENE_OT_SerialOneScan(Operator):
                         elif scene.prop_group.coll[countup].type == 'String':
                             scene.prop_group.coll[countup].stringval = str(thing)
                         elif scene.prop_group.coll[countup].type == 'Bool':
-                            print("meow")
                             scene.prop_group.coll[countup].ExampleBool = bool(thing)
                         else:
                             pass
                         countup = countup + 1
                 else:
                     #hopefully this is impossible
-                    print("doggo")
+                    print("error 1")
             except:
-                print("prongles")
+                print("error 2")
         except:
             print("No serial device found")
             #exit()
