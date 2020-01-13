@@ -1,0 +1,12 @@
+How to prove this works as intended:
+1. Start a new, Factory Default Blend file in Blender
+2. In Blender, open the add-on that you found in this folder
+3. Run the add-on
+4. Go back to the Layout
+5. On the right of the 3D view there should be a tab labelled "Serial" now
+6. Open the Serial tab
+7. Open the Receiving Panel Sub-Panel
+8. Press the "Add to Panel" Operator a couple of times to add items to the ListBox at the bottom of the Receiving Sub-Panel (DON'T TOUCH THE OTHER BUTTONS YET)
+9. Change the Integer value in the ListBox (the 2nd column has those)
+
+Now, somehow, use that Integer value to drive the value of the default cube's x rotation.
