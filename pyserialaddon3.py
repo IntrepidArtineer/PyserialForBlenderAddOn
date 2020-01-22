@@ -671,7 +671,7 @@ class SERIAL_PT_main_panel(Panel): #It's imprtant to have PT somewhere in the pa
         layout.prop(serMainProps, "serial_main_timeout_float") #Provide Timeout value
 
         layout.operator("serial.serial_invoke_operator")
-        layout.label("Right click while serial com is running to stop it.")
+        layout.label(text="Right click while serial com is running to stop it.")
         
 
 class SERIAL_PT_receiving_panel(Panel):
